@@ -21,13 +21,18 @@ const centeredContainerVariants = cva(
   }
 );
 
-const CenteredContainer: FC<Props> = ({ minHeight, className, ...props }) => {
+const CenteredContainer: FC<Props> = ({
+  minHeight,
+  className,
+  children,
+  ...props
+}) => {
   return (
     <div
       {...props}
       className={cn(centeredContainerVariants({ minHeight, className }))}
     >
-      CenteredContainer
+      {children}
     </div>
   );
 };
