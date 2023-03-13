@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/cn";
 
@@ -28,15 +28,20 @@ const inputVariants = cva("block w-full rounded-lg border-2 p-2.5 text-sm", {
   },
 });
 
-const Input: FC<Props> = ({ variant, size, className, ...props }) => {
-  return (
-    <input
-      type="text"
-      placeholder="Enter your prompt"
-      {...props}
-      className={cn(inputVariants({ variant, size, className }))}
-    />
-  );
-};
+const Input = forwardRef<HTMLInputElement, Props>(
+  ({ variant, size, className, ...props }, ref) => {
+    return (
+      <input
+        type="text"
+        ref={ref}
+        placeholder="Enter your prompt"
+        {...props}
+        className={cn(inputVariants({ variant, size, className }))}
+      />
+    );
+  }
+);
+
+Input.displayName = "Input";
 
 export default Input;
