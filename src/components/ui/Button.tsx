@@ -3,20 +3,23 @@ import { type VariantProps, cva } from "class-variance-authority";
 import { type FC } from "react";
 
 interface Props
-  extends React.HTMLAttributes<HTMLButtonElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  type?: "button" | "submit" | "reset";
+  text: string;
 }
 
-const buttonVariants = cva("bg-pink-300 rounded-lg p-2.5 text-sm", {
-  variants: {},
-  defaultVariants: {},
-});
+const buttonVariants = cva(
+  "bg-pink-300 rounded-lg p-2.5 text-sm cursor-pointer",
+  {
+    variants: {},
+    defaultVariants: {},
+  }
+);
 
-const Button: FC<Props> = ({ type = "button", className, ...props }) => {
+const Button: FC<Props> = ({ text = "Click me", className, ...props }) => {
   return (
-    <button type={type} className={cn(buttonVariants(className))} {...props}>
-      Button
+    <button className={cn(buttonVariants({ className }))} {...props}>
+      {text}
     </button>
   );
 };
