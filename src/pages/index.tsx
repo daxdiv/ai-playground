@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { api } from "@/utils/api";
 import { PulseLoader } from "react-spinners";
 import clsx from "clsx";
+import Typed from "react-typed";
 
 const Home: NextPage = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -70,12 +71,13 @@ const Home: NextPage = () => {
             </Paragraph>
           )}
           {promptResponse && (
-            <Paragraph
-              size="sm"
-              className="w-full rounded-lg border-2 border-gray-500 bg-gray-700 p-4 text-center"
-            >
-              {promptResponse.content}
-            </Paragraph>
+            <div className="w-full rounded-lg border-2 border-gray-500 bg-gray-700 p-4">
+              <Typed
+                strings={[promptResponse.content]}
+                typeSpeed={30}
+                loop={false}
+              />
+            </div>
           )}
         </CenteredContainer>
       </CenteredContainer>
