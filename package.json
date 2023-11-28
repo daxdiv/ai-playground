@@ -9,41 +9,48 @@
     "start": "next start"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.26.1",
-    "@trpc/client": "^10.15.0",
-    "@trpc/next": "^10.15.0",
-    "@trpc/react-query": "^10.15.0",
-    "@trpc/server": "^10.15.0",
+    "@tanstack/react-query": "^4.36.1",
+    "@trpc/client": "^10.44.1",
+    "@trpc/next": "^10.44.1",
+    "@trpc/react-query": "^10.44.1",
+    "@trpc/server": "^10.44.1",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
-    "next": "^13.2.4",
-    "openai": "^3.2.1",
+    "next": "13.4.20-canary.13",
+    "openai": "^3.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-spinners": "^0.13.8",
     "react-typed": "^1.2.0",
     "superjson": "1.9.1",
-    "tailwind-merge": "^1.10.0",
+    "tailwind-merge": "^1.14.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/eslint": "^8.21.1",
-    "@types/node": "^18.15.1",
-    "@types/prettier": "^2.7.2",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.36.0",
-    "eslint-config-next": "^13.2.4",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.4",
-    "prettier-plugin-tailwindcss": "^0.2.4",
-    "tailwindcss": "^3.2.7",
+    "@types/eslint": "^8.44.7",
+    "@types/node": "^18.18.13",
+    "@types/prettier": "^2.7.3",
+    "@types/react": "^18.2.39",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^13.5.6",
+    "postcss": "^8.4.31",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "tailwindcss": "^3.3.5",
     "typescript": "^4.9.5"
   },
   "ct3aMetadata": {
     "initVersion": "7.7.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss@<8.4.31": ">=8.4.31",
+      "zod@<=3.22.2": ">=3.22.3",
+      "axios@>=0.8.1 <1.6.0": ">=1.6.0"
+    }
   }
 }
